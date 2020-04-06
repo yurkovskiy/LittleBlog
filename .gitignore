@@ -1,0 +1,5 @@
+/system/
+/modules/
+/application/cache/
+/application/logs/
+/public/
