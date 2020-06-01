@@ -6,10 +6,12 @@ if (!isset($id)) {
 	$message = null;
 	$btnName = "Create";
 	$page_title = "Add new post";
+	$readonly = "";
 }
 else {
 	$btnName = "Update";
 	$page_title = "Edit post";
+	$readonly = "readonly";
 }
 
 ?>
@@ -20,7 +22,7 @@ else {
   <input type="hidden" name="id" value="<?php echo $id?>">
   <div class="form-group">
     <label for="author">Author</label>
-    <input type="text" class="form-control" id="author" name="author" placeholder="Enter your name" value="<?php echo $author?>">
+    <input type="text" class="form-control" id="author" name="author" placeholder="Enter your name" value="<?php echo $author?>" <?php echo $readonly?>>
   </div>
   <div class="form-group">
     <label for="title">Title</label>

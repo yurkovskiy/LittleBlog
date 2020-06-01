@@ -168,6 +168,16 @@ Kohana::modules([
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
+
+Route::set('restapi', 'Api(/<controller>(/<id>))')
+	->defaults([
+		'directory' => 'Api',
+		'controller' => 'Posts',
+		'action' => 'index',
+		'format' => 'json'
+	]);
+
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
 	->defaults([
 		'controller' => 'Posts',
