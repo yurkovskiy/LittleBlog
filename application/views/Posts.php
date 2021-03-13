@@ -4,7 +4,8 @@
   <div class="card-body">
     <h5 class="card-title"><?php echo $post->title?></h5>
     <h6 class="card-subtitle mb-2 text-muted"><?php echo $post->author?>&nbsp;&nbsp;&nbsp;<?php echo $post->post_date?></h6>
-    <p class="card-text"><?php echo $post->message?></p>
+    <p class="card-text"><?php echo htmlspecialchars($post->message)?></p>
+    <h6 class="card-subtitle mb-2 text-muted"><?php echo $post->tags?></h6>
     <a href="<?php echo URL::site("Posts/Edit")."/".$post->id?>" class="btn btn-success">Edit</a>
     <a href="#" onclick="delConfirm(<?php echo $post->id?>)" class="btn btn-danger">Delete</a>
   </div>

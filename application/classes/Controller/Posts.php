@@ -1,7 +1,7 @@
 <?php
 
 class Controller_Posts extends Controller_Base {
-	
+
 	public function action_index()
 	{
 		$content = View::factory("Posts");
@@ -28,6 +28,7 @@ class Controller_Posts extends Controller_Base {
 		$content->author = $post->author;
 		$content->post_date = $post->post_date;
 		$content->id = $post->id;
+		$content->tags = $post->tags;
 		$content->message = $post->message;
 		$this->template->content = $content;
 	}
@@ -44,6 +45,7 @@ class Controller_Posts extends Controller_Base {
 		$newPost->author = $this->request->post("author");
 		$newPost->message = $this->request->post("message");
 		$newPost->post_date = date("Y-m-d H:i:s");
+		$newPost->tags = $this->request->post("tags");
 		$newPost->save();
 		$this->redirect("Posts");
 	}

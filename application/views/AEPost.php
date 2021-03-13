@@ -4,6 +4,7 @@ if (!isset($id)) {
 	$author = null;
 	$title = null;
 	$message = null;
+	$tags = null;
 	$btnName = "Create";
 	$page_title = "Add new post";
 	$readonly = "";
@@ -27,6 +28,10 @@ else {
   <div class="form-group">
     <label for="title">Title</label>
     <input type="text" class="form-control" id="title" name="title" placeholder="Enter the title" value="<?php echo $title?>">
+  </div>
+  <div class="form-group">
+    <label for="tags">Tags</label>
+    <input type="text" class="form-control" id="tags" name="tags" placeholder="Enter tags here" value="<?php echo $tags?>">
   </div>
   <div class="form-group">
     <label for="message">Message</label>
